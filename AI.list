@@ -3,7 +3,6 @@
 DOMAIN-KEYWORD,openai
 DOMAIN-KEYWORD,anthropic
 DOMAIN-KEYWORD,Claude
-DOMAIN-KEYWORD,qichiyu
 # 微软copilot
 DOMAIN-KEYWORD,copilot
 # 域名后缀匹配
@@ -29,4 +28,3 @@ DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai.com
 DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN-SUFFIX,qichiyu.com
