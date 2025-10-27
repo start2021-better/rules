@@ -1,4 +1,8 @@
 # 代理补充列表
+# DOMAIN-SUFFIX: 15
+# IP-CIDR: 9
+# DOMAIN-KEYWORD: 1
+# TOTAL: 25
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,qichiyu.com
