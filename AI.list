@@ -1,5 +1,7 @@
 # 内容：OpenAi Bard anthropic
-
+# DOMAIN-SUFFIX: 25
+# DOMAIN-KEYWORD: 4
+# TOTAL: 29
 # 域名关键字匹配
 DOMAIN-KEYWORD,openai
 DOMAIN-KEYWORD,anthropic
