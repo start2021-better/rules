@@ -27,4 +27,5 @@ DOMAIN-SUFFIX,ssl-google-analytics.l.google.com
 DOMAIN-SUFFIX,toolbarqueries.google.com
 DOMAIN-SUFFIX,tools.google.com
 DOMAIN-SUFFIX,tools.l.google.com
-DOMAIN-SUFFIX,www-googletagmanager.l.google.com
+DOMAIN-SUFFIX,idx.google.com
+DOMAIN-SUFFIX,firebase.google.com
