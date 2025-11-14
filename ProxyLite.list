@@ -1,5 +1,5 @@
 # 代理补充列表
-# DOMAIN-SUFFIX: 15
+# DOMAIN-SUFFIX: 17
 # IP-CIDR: 9
 # DOMAIN-KEYWORD: 1
 # TOTAL: 25
@@ -9,6 +9,8 @@
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,qichiyu.com
+DOMAIN-SUFFIX,karing.app
+DOMAIN-SUFFIX,translate.brave.com
 DOMAIN-SUFFIX,huangsecangku.net
 DOMAIN-SUFFIX,hsck.la
 DOMAIN-SUFFIX,netflav5.com
