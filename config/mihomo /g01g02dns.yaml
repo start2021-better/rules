@@ -121,9 +121,9 @@ proxy-groups:
   - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?=.*(美国|美國|US|USA|us|usa))*$"}
   - {name: 🔯 美国故转, type: fallback, include-all: true, interval: 300,filter: "(?=.*(美国|美國|US|USA|us|usa|加拿大|CA))*$"}
   - {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: "(?=.*(c1|c2|c3|c4|c5|c6|ec2))^(?=.*(德国|DE|Germany|DEU|SG|新加坡|Singapore|台湾|台灣|tw|TW|TaiPei|Taipei))*$"}
-  - {name: 🔯 狮城故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(c1|c2|c3|c4|c5|c6|ec2))^(?=.*(德国|DE|Germany|DEU|SG|新加坡|Singapore|台湾|台灣|tw|TW|TaiPei|Taipei))*$"}
-  - {name: 🇺🇲 美国CF type: select, include-all: true, filter: "(?=.*(美国|美國|US|USA|us|usa|加拿大|CA))^(?=.*(w1|w2|w3|w4|w5|w6|w7))*$"}
-  - {name: 🇨🇳 台湾IDX, type: select, include-all: true, filter: "^(?!.*(ec2|亚马逊))(?=.*(a1|a2|a3|a4|a5|a6))(?=.*(台湾|台灣|tw|TW|TaiPei|Taipei))*$"}
+  - {name: 🔯 狮城故转, type: fallback, include-all: true, interval: 300,filter: "(?=.*(c1|c2|c3|c4|c5|c6|ec2))^(?=.*(德国|DE|Germany|DEU|SG|新加坡|Singapore|台湾|台灣|tw|TW|TaiPei|Taipei))*$"}
+  - {name: 🇺🇲 美国CF type: select, include-all: true,filter: "(?=.*(美国|美國|US|USA|us|usa|加拿大|CA))^(?=.*(w1|w2|w3|w4|w5|w6|w7))*$"}
+  - {name: 🇨🇳 台湾IDX, type: select, include-all: true,filter: "^(?!.*(ec2|亚马逊))(?=.*(a1|a2|a3|a4|a5|a6))(?=.*(台湾|台灣|tw|TW|TaiPei|Taipei))*$"}
   - {name: 🌐 IDX, type: select, include-all: true, filter: "(?=.*(a1|a2|a3|a4|a5|a6))*$"}
   - {name: 🔯 香港故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(香港|HK|Hong Kong|MK|澳门|澳門))*$"}
 
