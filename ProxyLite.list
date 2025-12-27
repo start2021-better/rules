@@ -1,10 +1,11 @@
 # 代理列表说明
-# DOMAIN-SUFFIX：16
+# DOMAIN-SUFFIX：20
 # DOMAIN-KEYWORD：1
-# IP-CIDR：4
+# IP-CIDR：9
+# DOMAIN：3
 
-# TOTAL: 25
-# 总数量：25条
+# TOTAL: 33
+# 总数量：33条
 
 # 域名后缀匹配
 # 数量：7条
@@ -26,7 +27,7 @@ IP-CIDR,142.171.133.131/32,no-resolve
 IP-CIDR,103.115.43.2/32,no-resolve
 
 # 国外DNS
-# 数量：12条
+# 数量：16条
 DOMAIN-SUFFIX,dns.google
 DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
 DOMAIN-SUFFIX,dot.sb
