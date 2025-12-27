@@ -5,7 +5,12 @@
 # DOMAIN-SUFFIX: 45
 # IP-CIDR: 15
 # IP-CIDR6: 7
-# TOTAL: 66
+# TOTAL: 67
+# 代理补充列表
+# 总数量：67条
+
+# 域名后缀匹配
+# 数量：45条
 DOMAIN-SUFFIX,cf-ipfs.com
 DOMAIN-SUFFIX,cf-ns.com
 DOMAIN-SUFFIX,cf-ns.net
@@ -49,10 +54,11 @@ DOMAIN-SUFFIX,trycloudflare.com
 DOMAIN-SUFFIX,videodelivery.net
 DOMAIN-SUFFIX,warp.plus
 DOMAIN-SUFFIX,workers.dev
-
 DOMAIN-SUFFIX,argotunnel.com
 DOMAIN-SUFFIX,cfapi.net
 
+# IP段匹配
+# 数量：15条
 IP-CIDR,103.21.244.0/22,no-resolve
 IP-CIDR,103.22.200.0/22,no-resolve
 IP-CIDR,103.31.4.0/22,no-resolve
@@ -68,6 +74,9 @@ IP-CIDR,188.114.96.0/20,no-resolve
 IP-CIDR,190.93.240.0/20,no-resolve
 IP-CIDR,197.234.240.0/22,no-resolve
 IP-CIDR,198.41.128.0/17,no-resolve
+
+# IPv6段匹配
+# 数量：7条
 IP-CIDR6,2400:cb00::/32,no-resolve
 IP-CIDR6,2405:8100::/32,no-resolve
 IP-CIDR6,2405:b500::/32,no-resolve
