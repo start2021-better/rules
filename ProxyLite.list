@@ -1,6 +1,10 @@
 # 代理列表说明
-# 总数量：25条
+# DOMAIN-SUFFIX：16
+# DOMAIN-KEYWORD：1
+# IP-CIDR：4
+
 # TOTAL: 25
+# 总数量：25条
 
 # 域名后缀匹配
 # 数量：7条
