@@ -1,11 +1,10 @@
 # 直连补充列表(国内域名不解析时，防止走代理使用)
-# DOMAIN-SUFFIX: 
-# DOMAIN-KEYWORD: 
-# IP-CIDR: 9
-# TOTAL: 514
+# DOMAIN-SUFFIX: 495
+# DOMAIN-KEYWORD: 1
+# IP-CIDR: 8
+# TOTAL: 504
 
 # MyList
-# 域名后缀匹配
 DOMAIN-SUFFIX,time.windows.com
 DOMAIN-SUFFIX,lanzov.com
 DOMAIN-SUFFIX,hao123.com
@@ -13,17 +12,12 @@ DOMAIN-SUFFIX,gboxlab.com
 DOMAIN-SUFFIX,apkmirror.com
 DOMAIN-SUFFIX,da4k.com
 DOMAIN-SUFFIX,cn.bing.com
-
-# 域名关键字匹配
 DOMAIN-KEYWORD,baidu
-
-# IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
 
 # 国内DNS
 DOMAIN-SUFFIX,dns.alidns.com
 DOMAIN-SUFFIX,doh.pub
-IP-CIDR,219.146.1.66/32,no-resolve
 IP-CIDR,219.147.1.66/32,no-resolve
 IP-CIDR,119.29.29.29/32,no-resolve
 IP-CIDR,223.5.5.5/32,no-resolve
@@ -93,7 +87,6 @@ DOMAIN-SUFFIX,bcebos.com
 DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,bdurl.net
-DOMAIN-SUFFIX,hao123.com
 DOMAIN-SUFFIX,hao123img.com
 DOMAIN-SUFFIX,jomodns.com
 DOMAIN-SUFFIX,yunjiasu-cdn.net
@@ -334,10 +327,6 @@ DOMAIN-SUFFIX,thundercdn.com
 DOMAIN-SUFFIX,xunlei.com
 
 # Public Direct CDN 公共直连
-#DOMAIN-SUFFIX,ajax.aspnetcdn.com
-#DOMAIN-SUFFIX,ajax.cloudflare.com
-#DOMAIN-SUFFIX,cdnjs.cloudflare.com
-#DOMAIN-SUFFIX,code.jquery.com
 DOMAIN-SUFFIX,baomitu.com
 DOMAIN-SUFFIX,bootcss.com
 DOMAIN-SUFFIX,jiasule.com
