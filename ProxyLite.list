@@ -1,13 +1,9 @@
-# 代理补充列表
-# DOMAIN-SUFFIX: 17
-# IP-CIDR: 9
-# DOMAIN-KEYWORD: 1
+# 代理列表说明
+# 总数量：25条
 # TOTAL: 25
-#
-# 内容：Docker
-# 数量：7条
 
 # 域名后缀匹配
+# 数量：7条
 DOMAIN-SUFFIX,qichiyu.com
 DOMAIN-SUFFIX,karing.app
 DOMAIN-SUFFIX,translate.brave.com
@@ -17,23 +13,24 @@ DOMAIN-SUFFIX,netflav5.com
 DOMAIN-SUFFIX,apkmirror.com
 
 # 域名关键字匹配
+# 数量：1条
 DOMAIN-KEYWORD,1e100
 
 # IP段匹配
+# 数量：2条
 IP-CIDR,142.171.133.131/32,no-resolve
 IP-CIDR,103.115.43.2/32,no-resolve
 
 # 国外DNS
+# 数量：12条
 DOMAIN-SUFFIX,dns.google
 DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
 DOMAIN-SUFFIX,dot.sb
 DOMAIN-SUFFIX,dns.umbrella.com
 DOMAIN-SUFFIX,dns.quad9.net
-DOMAIN-SUFFIX,dns.google
 DOMAIN-SUFFIX,cloudflare-dns.com
 DOMAIN-SUFFIX,doh.dns.sb
 DOMAIN-SUFFIX,doh.opendns.com
-DOMAIN-SUFFIX,dns.quad9.net
 DOMAIN-SUFFIX,hk-hkg.doh.sb
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
@@ -44,6 +41,7 @@ IP-CIDR,208.67.222.222/32,no-resolve
 IP-CIDR,208.67.220.220/32,no-resolve
 
 # 内容：Docker
+# 数量：7条
 DOMAIN,d1q6f0aelx0por.cloudfront.net
 DOMAIN,d2wy8f7a9ursnm.cloudfront.net
 DOMAIN,d36jcksde1wxzq.cloudfront.net
