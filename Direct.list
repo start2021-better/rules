@@ -1,8 +1,18 @@
 # 直连补充列表(国内域名不解析时，防止走代理使用)
-# DOMAIN-SUFFIX: 503
+# DOMAIN-SUFFIX: 511
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 8
-# TOTAL: 512
+# TOTAL: 520
+
+# 自有域名
+DOMAIN-SUFFIX,aihn.dpdns.org
+DOMAIN-SUFFIX,find1314.qzz.io
+DOMAIN-SUFFIX,find2025.ggff.net
+DOMAIN-SUFFIX,550735.xyz
+DOMAIN-SUFFIX,fast100.ip-ddns.com
+DOMAIN-SUFFIX,fast100.de5.net
+DOMAIN-SUFFIX,daili100.de5.net
+DOMAIN-SUFFIX,online1314.de5.net
 
 # MyList
 DOMAIN-SUFFIX,time.windows.com
