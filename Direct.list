@@ -13,6 +13,8 @@ DOMAIN-SUFFIX,fast100.ip-ddns.com
 DOMAIN-SUFFIX,fast100.de5.net
 DOMAIN-SUFFIX,daili100.de5.net
 DOMAIN-SUFFIX,online1314.de5.net
+# 自有维护
+DOMAIN-SUFFIX,zerotier.com
 
 # MyList
 DOMAIN-SUFFIX,time.windows.com
