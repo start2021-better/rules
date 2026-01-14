@@ -1,8 +1,8 @@
 # 直连补充列表(国内域名不解析时，防止走代理使用)
-# DOMAIN-SUFFIX: 511
+# DOMAIN-SUFFIX: 512
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 8
-# TOTAL: 520
+# TOTAL: 521
 
 # 自有域名
 DOMAIN-SUFFIX,aihn.dpdns.org
