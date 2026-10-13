@@ -52,7 +52,7 @@
     {"tag": "5️⃣ CFP节点", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["w5-"]}, {"action": "exclude", "keywords": ["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}]},
     {"tag": "6️⃣ CFW节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["w6-"]}, {"action": "exclude", "keywords": ["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}], "url": "https://clients1.google.com/generate_204", "interval": "10m", "tolerance": 100},
     {"tag": "手动选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["过期|Traffic|ExpireDate|Expire Date"]}]},
-    {"tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["到期|Expire Date|Traffic|ExpireDate"]}], "url": "https://clients1.google.com/generate_204", "interval": "600m", "tolerance": 100},
+    {"tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["到期|Expire Date|Traffic|ExpireDate"]}], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
     {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "🤖 AI", "📹 YouTube", "🍀 Google", "👨🏿‍💻 Github", "📲 Telegram", "TikTok", "Netflix", "Wallet", "Steam", "Microsoft", "OneDrive", "Apple", "漏网之鱼", "♻️ 长风分享节点", "♻️ 工具大师节点", "Rn自建节点", "IDX自建节点", "1️⃣ CFW节点","2️⃣ CFW节点","3️⃣ CFW节点","4️⃣ CFP节点","5️⃣ CFP节点","6️⃣ CFW节点", "手动选择", "自动选择", "延迟辅助", "直连"]},
     {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
