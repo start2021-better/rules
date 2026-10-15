@@ -930,9 +930,9 @@
       },
       {
         "tag": "myproxy-mini",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-ad.srs"
+        "type": "local",
+        "format": "source",
+        "path": "/www/singbox-rules/myproxy-mini.json"
       }
     ],
     "final": "🐟 漏网之鱼",
