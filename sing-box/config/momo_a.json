@@ -1,0 +1,1004 @@
+{
+  "$schema": "https://sing-box.sagernet.org/schema.json",
+  "dns": {
+    "servers": [
+      {
+        "tag": "local",
+        "type": "local",
+        "prefer_go": true
+      },
+      {
+        "tag": "ali",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "tx",
+        "type": "https",
+        "server": "doh.pub",
+        "domain_resolver": "hosts"
+      },
+      {
+        "tag": "google",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "🚀 默认代理"
+      },
+      {
+        "tag": "fake-ip-dns-server",
+        "type": "fakeip",
+        "inet4_range": "198.19.0.0/16"
+      },
+      {
+        "type": "hosts",
+        "tag": "hosts",
+        "predefined": {
+          "doh.pub": [
+            "1.12.12.21",
+            "120.53.53.53"
+          ]
+        }
+      }
+    ],
+    "rules": [
+      {
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "action": "reject"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "fake-ip-dns-server"
+      },
+      {
+        "rule_set": [
+          "fakeipfilter-cn",
+          "geosite-cn",
+          "geosite-microsoft@cn",
+          "geosite-apple@cn",
+          "geosite-private"
+        ],
+        "server": "ali"
+      },
+      {
+        "rule_set": "fakeipfilter-!cn",
+        "server": "google"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "query_type": [
+              "A",
+              "AAAA"
+            ]
+          },
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          }
+        ],
+        "action": "evaluate",
+        "server": "google",
+        "client_subnet": "223.5.5.0/24",
+        "timeout": "2s"
+      },
+      {
+        "match_response": true,
+        "rule_set": "geoip-cn",
+        "server": "ali"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fake-ip-dns-server",
+        "rewrite_ttl": 1
+      }
+    ],
+    "final": "google",
+    "strategy": "ipv4_only",
+    "cache_capacity": 8192,
+    "optimistic": {
+      "enabled": true
+    },
+    "reverse_mapping": true
+  },
+  "outbounds": [
+    {
+      "tag": "🚀 默认代理",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🤖 AI",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "📹 YouTube",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🍀 Google",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "👨🏿‍💻 Github",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "📲 Telegram",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🎵 TikTok",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🎥 Netflix",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "💰️ Wallet",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🎮 Steam",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🪟 Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🐬 OneDrive",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🍎 Apple",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🐟 漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "♻️ 长风分享节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "cf-|mem"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100
+    },
+    {
+      "tag": "♻️ 工具大师节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "gjds-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100
+    },
+    {
+      "tag": "🚤 Rn自建节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "Rn-US"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100
+    },
+    {
+      "tag": "🚢 IDX自建节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "a1|a2|a3|a4"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100
+    },
+    {
+      "tag": "1️⃣ CFW节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "w1-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "2️⃣ CFW节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "w2-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "3️⃣ CFW节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "w3-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "4️⃣ CFP节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "w4-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "5️⃣ CFP节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "w5-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "6️⃣ CFW节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "w6-"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "c1|c2|c3|c4|c5|c6|c7|c8|Rn-"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100
+    },
+    {
+      "tag": "🐸 手动选择",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "过期|Traffic|ExpireDate|Expire Date"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "♻️ 自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "到期|Expire Date|Traffic|ExpireDate"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "30m",
+      "tolerance": 100
+    },
+    {
+      "tag": "🚧 延迟辅助",
+      "type": "urltest",
+      "outbounds": [
+        "直连"
+      ],
+      "url": "http://connect.rom.miui.com/generate_204",
+      "interval": "30m"
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🤖 AI",
+        "📹 YouTube",
+        "🍀 Google",
+        "👨🏿‍💻 Github",
+        "📲 Telegram",
+        "🎵 TikTok",
+        "🎥 Netflix",
+        "💰️ Wallet",
+        "🎮 Steam",
+        "🪟 Microsoft",
+        "🐬 OneDrive",
+        "🍎 Apple",
+        "🐟 漏网之鱼",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🚧 延迟辅助",
+        "直连"
+      ]
+    },
+    {
+      "tag": "直连",
+      "type": "direct",
+      "domain_resolver": "ali"
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "直连下载",
+      "detour": "直连"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": "push.apple.com"
+          },
+          {
+            "rule_set": "geoip-telegram"
+          }
+        ],
+        "invert": true,
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "stun",
+          "quic",
+          "dns"
+        ],
+        "timeout": "100ms"
+      },
+      {
+        "inbound": "dns-in",
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "直连"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "protocol": [
+              "stun",
+              "quic"
+            ]
+          }
+        ],
+        "action": "reject",
+        "no_drop": true
+      },
+      {
+        "network": "icmp",
+        "action": "resolve"
+      },
+      {
+        "network": "icmp",
+        "outbound": "直连"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "直连"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "rule_set": "geosite-private",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-category-ai-!cn",
+        "outbound": "🤖 AI"
+      },
+      {
+        "rule_set": "geosite-youtube",
+        "outbound": "📹 YouTube"
+      },
+      {
+        "rule_set": "geosite-google",
+        "outbound": "🍀 Google"
+      },
+      {
+        "rule_set": "geosite-github",
+        "outbound": "👨🏿‍💻 Github"
+      },
+      {
+        "rule_set": "geosite-onedrive",
+        "outbound": "🐬 OneDrive"
+      },
+      {
+        "rule_set": "geosite-microsoft@cn",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "🪟 Microsoft"
+      },
+      {
+        "rule_set": "geosite-apple@cn",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-apple",
+        "outbound": "🍎 Apple"
+      },
+      {
+        "rule_set": "geosite-telegram",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "geosite-netflix",
+        "outbound": "🎥 Netflix"
+      },
+      {
+        "rule_set": "Proxy-mini",
+        "outbound": "💰️ Wallet"
+      },
+      {
+        "rule_set": "geosite-paypal",
+        "outbound": "💰️ Wallet"
+      },
+      {
+        "rule_set": "geosite-binance",
+        "outbound": "💰️ Wallet"
+      },
+      {
+        "rule_set": "geosite-okx",
+        "outbound": "💰️ Wallet"
+      },
+      {
+        "rule_set": "geosite-category-cryptocurrency",
+        "outbound": "💰️ Wallet"
+      },
+      {
+        "rule_set": "geosite-steam@cn",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-steam",
+        "outbound": "🎮 Steam"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "🚀 默认代理"
+      },
+      {
+        "action": "resolve"
+      },
+      {
+        "rule_set": "geoip-telegram",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "直连"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": [
+          "fakeipfilter-cn",
+          "fakeipfilter-!cn"
+        ],
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"
+      },
+      {
+        "tag": [
+          "geosite-category-ai-!cn",
+          "geosite-youtube",
+          "geosite-google",
+          "geosite-github",
+          "geosite-onedrive",
+          "geosite-microsoft",
+          "geosite-microsoft@cn",
+          "geosite-apple",
+          "geosite-apple@cn",
+          "geosite-telegram",
+          "geosite-tiktok",
+          "geosite-netflix",
+          "geosite-paypal",
+          "geosite-binance",
+          "geosite-okx",
+          "geosite-category-cryptocurrency",
+          "geosite-steam@cn",
+          "geosite-steam",
+          "geosite-geolocation-!cn",
+          "geosite-cn",
+          "geosite-private",
+          "Proxy-mini"
+        ],
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "Proxy-mini",
+        "type": "remote",
+        "format": "source",
+        "url": "https://pull.fast100.de5.net/https://raw.githubusercontent.com/start2021-better/rules/refs/heads/main/sing-box/config/proxy-mini.list"
+      }
+    ],
+    "final": "🐟 漏网之鱼",
+    "default_http_client": "直连下载",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "ali"
+    }
+  },
+  "inbounds": [
+    {
+      "tag": "dns-in",
+      "type": "direct",
+      "listen": "::",
+      "listen_port": 1053
+    },
+    {
+      "tag": "http-in",
+      "type": "http",
+      "listen": "::",
+      "listen_port": 8080
+    },
+    {
+      "tag": "socks-in",
+      "type": "socks",
+      "listen": "::",
+      "listen_port": 1080
+    },
+    {
+      "tag": "redirect-in",
+      "type": "redirect",
+      "listen": "::",
+      "listen_port": 7890
+    },
+    {
+      "tag": "tproxy-in",
+      "type": "tproxy",
+      "listen": "::",
+      "listen_port": 7891
+    },
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "interface_name": "momo",
+      "address": [
+        "172.31.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": false,
+      "auto_redirect": false
+    }
+  ],
+  "services": [
+    {
+      "type": "api",
+      "listen": "0.0.0.0",
+      "listen_port": 9090,
+      "secret": "passwd",
+      "dashboard": {
+        "enabled": true,
+        "path": "dashboard"
+      }
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "store_dns": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "ui",
+      "secret": "passwd",
+      "default_mode": "Rule"
+    }
+  },
+  "certificate": {
+    "store": "chrome"
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "time.apple.com"
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}
