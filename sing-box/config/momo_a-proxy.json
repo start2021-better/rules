@@ -930,9 +930,9 @@
       },
       {
         "tag": "myproxy-mini",
-        "type": "local",
+        "type": "remote",
         "format": "source",
-        "path": "/www/singbox-rules/myproxy-mini.json"
+        "url": "http://127.0.0.1/singbox-rules/myproxy-mini.json"
       }
     ],
     "final": "🐟 漏网之鱼",
