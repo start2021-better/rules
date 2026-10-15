@@ -363,7 +363,7 @@
       ]
     },
     {
-      "tag": "proxymini",
+      "tag": "my-proxymini",
       "type": "selector",
       "outbounds": [
         "🚀 默认代理",
@@ -686,7 +686,7 @@
         "🪟 Microsoft",
         "🐬 OneDrive",
         "🍎 Apple",
-        "proxymini",
+        "my-proxymini",
         "🐟 漏网之鱼",
         "♻️ 长风分享节点",
         "♻️ 工具大师节点",
@@ -834,8 +834,8 @@
         "outbound": "🎥 Netflix"
       },
       {
-        "rule_set": "Proxy-mini",
-        "outbound": "proxymini"
+        "rule_set": "My-Proxy-mini",
+        "outbound": "my-proxymini"
       },
       {
         "rule_set": "geosite-paypal",
@@ -910,7 +910,7 @@
           "geosite-geolocation-!cn",
           "geosite-cn",
           "geosite-private",
-          "Proxy-mini"
+          "My-Proxy-mini"
         ],
         "type": "remote",
         "format": "binary",
@@ -929,7 +929,7 @@
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
       },
       {
-        "tag": "Proxy-mini",
+        "tag": "My-Proxy-mini",
         "type": "remote",
         "format": "source",
         "url": "https://pull.fast100.de5.net/https://raw.githubusercontent.com/start2021-better/rules/refs/heads/main/sing-box/config/proxy-mini.list"
