@@ -931,7 +931,7 @@
         "tag": "hchlist-mini",
         "type": "remote",
         "format": "source",
-        "url": "https://pull.fast100.de5.net/https://raw.githubusercontent.com/start2021-better/rules/refs/heads/main/sing-box/config/proxy-mini.list"
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/refs/heads/main/sing-box/config/proxy-mini.list"
       }
     ],
     "final": "🐟 漏网之鱼",
