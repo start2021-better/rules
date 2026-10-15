@@ -363,6 +363,26 @@
       ]
     },
     {
+      "tag": "自定义分组",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFW节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
       "tag": "🐟 漏网之鱼",
       "type": "selector",
       "outbounds": [
@@ -814,7 +834,7 @@
       },
       {
         "rule_set": "Proxy-mini",
-        "outbound": "💰️ Wallet"
+        "outbound": "自定义分组"
       },
       {
         "rule_set": "geosite-paypal",
