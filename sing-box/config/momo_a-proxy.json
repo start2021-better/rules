@@ -931,8 +931,8 @@
       {
         "tag": "myproxy-mini",
         "type": "remote",
-        "format": "source",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/refs/heads/main/sing-box/config/myproxy-mini.json"
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-ad.srs"
       }
     ],
     "final": "🐟 漏网之鱼",
