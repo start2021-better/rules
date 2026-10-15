@@ -1,3 +1,13 @@
-DOMAIN-SUFFIX,translate.brave.com
-DOMAIN-SUFFIX,firebase.studio
-DOMAIN-KEYWORD,1e100
+[
+  {
+    "domain_suffix": [
+      "translate.brave.com",
+      "firebase.studio"
+    ]
+  },
+  {
+    "domain_keyword": [
+      "1e100"
+    ]
+  }
+]
