@@ -3,6 +3,7 @@
 安装了singbox的openwrt系统环境
 
 命令
+
 sing-box rule-set compile myproxy-mini.json -o myproxy-mini.srs
 
 反向命令
