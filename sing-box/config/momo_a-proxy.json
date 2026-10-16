@@ -909,8 +909,7 @@
           "geosite-steam",
           "geosite-geolocation-!cn",
           "geosite-cn",
-          "geosite-private",
-          "myproxy-mini"
+          "geosite-private"
         ],
         "type": "remote",
         "format": "binary",
@@ -932,7 +931,7 @@
         "tag": "myproxy-mini",
         "type": "remote",
         "format": "source",
-        "url": "http://127.0.0.1/singbox-rules/myproxy-mini.json"
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.json"
       }
     ],
     "final": "🐟 漏网之鱼",
