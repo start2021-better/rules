@@ -930,8 +930,8 @@
       {
         "tag": "myproxy-mini",
         "type": "remote",
-        "format": "source",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.list"
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.srs"
       }
     ],
     "final": "🐟 漏网之鱼",
