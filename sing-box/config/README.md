@@ -2,13 +2,12 @@
 
 系统环境：安装了singbox的openwrt终端即可操作
 
-执行
 ```shell
 # 执行命令
 sing-box rule-set compile myproxy-mini.json -o myproxy-mini.srs
 ```
 
-### srs(二进制)文件转成普通json文件
+## srs(二进制)文件转成普通json文件
 
 
 ```shell
