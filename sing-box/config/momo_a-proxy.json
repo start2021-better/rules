@@ -363,7 +363,7 @@
       ]
     },
     {
-      "tag": "🏁 自定义分组",
+      "tag": "🚥 定制组",
       "type": "selector",
       "outbounds": [
         "🚀 默认代理",
@@ -686,7 +686,7 @@
         "🪟 Microsoft",
         "🐬 OneDrive",
         "🍎 Apple",
-        "🏁 自定义分组",
+        "🚥 定制组",
         "🐟 漏网之鱼",
         "♻️ 长风分享节点",
         "♻️ 工具大师节点",
@@ -835,7 +835,7 @@
       },
       {
         "rule_set": "myproxy-mini",
-        "outbound": "🏁 自定义分组"
+        "outbound": "🚥 定制组"
       },
       {
         "rule_set": "geosite-paypal",
