@@ -363,7 +363,7 @@
       ]
     },
     {
-      "tag": "My-proxylist",
+      "tag": "🛶 ProxyMini",
       "type": "selector",
       "outbounds": [
         "🚀 默认代理",
@@ -686,7 +686,7 @@
         "🪟 Microsoft",
         "🐬 OneDrive",
         "🍎 Apple",
-        "My-proxylist",
+        "🛶 ProxyMini",
         "🐟 漏网之鱼",
         "♻️ 长风分享节点",
         "♻️ 工具大师节点",
@@ -834,8 +834,8 @@
         "outbound": "🎥 Netflix"
       },
       {
-        "rule_set": "my-proxylist-mini",
-        "outbound": "My-proxylist"
+        "rule_set": "my-proxy-inline",
+        "outbound": "🛶 ProxyMini"
       },
       {
         "rule_set": "geosite-paypal",
@@ -928,7 +928,7 @@
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
       },
       {
-        "tag": "my-proxylist-mini",
+        "tag": "my-proxy-inline",
         "type": "inline",
         "rules": [
          {
