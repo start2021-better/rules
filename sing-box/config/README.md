@@ -1,6 +1,6 @@
 ## 如何把json规则文件转成srs(二进制)文件？
 
-### 安装了singbox的openwrt系统环境
+系统环境：安装了singbox的openwrt终端即可操作
 
 执行命令
 
