@@ -1,11 +1,13 @@
-## 如何把json规则文件转成srs(二进制)文件
-# 环境
-安装了singbox的openwrt系统环境
+## 如何把json规则文件转成srs(二进制)文件？
 
-命令
+### 安装了singbox的openwrt系统环境
+
+执行命令
 
 sing-box rule-set compile myproxy-mini.json -o myproxy-mini.srs
 
-反向命令
+### srs(二进制)文件转成普通json文件
+
+执行命令
 
 sing-box rule-set decompile myproxy-mini.srs -o myproxy-mini.json
