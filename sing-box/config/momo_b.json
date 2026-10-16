@@ -363,7 +363,7 @@
       ]
     },
     {
-      "tag": "🎯 小众选择",
+      "tag": "🚥 小众选择",
       "type": "selector",
       "outbounds": [
         "🚀 默认代理",
@@ -686,7 +686,7 @@
         "🪟 Microsoft",
         "🐬 OneDrive",
         "🍎 Apple",
-        "🎯 小众选择",
+        "🚥 小众选择",
         "🐟 漏网之鱼",
         "♻️ 长风分享节点",
         "♻️ 工具大师节点",
@@ -835,7 +835,7 @@
       },
       {
         "rule_set": "my-proxy-inline",
-        "outbound": "🎯 小众选择"
+        "outbound": "🚥 小众选择"
       },
       {
         "rule_set": "geosite-paypal",
