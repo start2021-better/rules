@@ -1,16 +1,1 @@
-{
-  "version": 3,
-  "rules": [
-    {
-      "domain_suffix": [
-        "translate.brave.com",
-        "firebase.studio"
-      ]
-    },
-    {
-      "domain_keyword": [
-        "1e100"
-      ]
-    }
-  ]
-}
+{"version":3,"rules":[{"domain_suffix":["translate.brave.com","firebase.studio"]},{"domain_keyword":["1e100"]}]}
