@@ -208,6 +208,25 @@
       ]
     },
     {
+      "tag": "🌤️ Cloudflare",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "♻️ 长风分享节点",
+        "♻️ 工具大师节点",
+        "🚤 Rn自建节点",
+        "🚢 IDX自建节点",
+        "1️⃣ CFW节点",
+        "2️⃣ CFW节点",
+        "3️⃣ CFP节点",
+        "4️⃣ CFP节点",
+        "5️⃣ CFP节点",
+        "6️⃣ CFW节点",
+        "🐸 手动选择",
+        "♻️ 自动选择"
+      ]
+    },
+    {
       "tag": "📲 Telegram",
       "type": "selector",
       "outbounds": [
@@ -678,6 +697,7 @@
         "📹 YouTube",
         "🍀 Google",
         "👨🏿‍💻 Github",
+        "🌤️ Cloudflare",
         "📲 Telegram",
         "🎵 TikTok",
         "🎥 Netflix",
@@ -834,6 +854,10 @@
         "outbound": "🎥 Netflix"
       },
       {
+        "rule_set": "Cloudflare",
+        "outbound": "🌤️ Cloudflare"
+      },
+      {
         "rule_set": "myproxy-mini",
         "outbound": "🚥 小众选择"
       },
@@ -926,6 +950,12 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "Cloudflare",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/Cloudflare.json"
       },
       {
         "tag": "myproxy-mini",
