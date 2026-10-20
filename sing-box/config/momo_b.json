@@ -1,193 +1,38 @@
 {
   "$schema": "https://sing-box.sagernet.org/schema.json",
+
   "dns": {
     "servers": [
-      {
-        "tag": "local",
-        "type": "local",
-        "prefer_go": true
-      },
-      {
-        "tag": "ali",
-        "type": "https",
-        "server": "223.5.5.5"
-      },
-      {
-        "tag": "tx",
-        "type": "https",
-        "server": "doh.pub",
-        "domain_resolver": "hosts"
-      },
-      {
-        "tag": "google",
-        "type": "https",
-        "server": "8.8.8.8",
-        "detour": "🚀 默认代理"
-      },
-      {
-        "tag": "fake-ip-dns-server",
-        "type": "fakeip",
-        "inet4_range": "198.19.0.0/16"
-      },
-      {
-        "type": "hosts",
-        "tag": "hosts",
-        "predefined": {
-          "doh.pub": [
-            "1.12.12.21",
-            "120.53.53.53"
-          ]
-        }
-      }
+      {"tag":"local","type":"local","prefer_go":true},
+      {"tag":"ali","type":"https","server":"223.5.5.5"},
+      {"tag":"tx","type":"https","server":"doh.pub","domain_resolver":"hosts"},
+      {"tag":"google","type":"https","server":"8.8.8.8","detour":"🚀 默认代理"},
+      {"tag":"fake-ip-dns-server","type":"fakeip","inet4_range":"198.19.0.0/16"},
+      {"type":"hosts","tag":"hosts","predefined":{"doh.pub":["1.12.12.21","120.53.53.53"]}}
     ],
     "rules": [
-      {
-        "query_type": [
-          "HTTPS",
-          "SVCB"
-        ],
-        "action": "reject"
-      },
-      {
-        "clash_mode": "Direct",
-        "server": "ali"
-      },
-      {
-        "clash_mode": "Global",
-        "server": "fake-ip-dns-server"
-      },
-      {
-        "rule_set": [
-          "fakeipfilter-cn",
-          "geosite-cn",
-          "geosite-microsoft@cn",
-          "geosite-apple@cn",
-          "geosite-private"
-        ],
-        "server": "ali"
-      },
-      {
-        "rule_set": "fakeipfilter-!cn",
-        "server": "google"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "query_type": [
-              "A",
-              "AAAA"
-            ]
-          },
-          {
-            "rule_set": "geosite-geolocation-!cn",
-            "invert": true
-          }
-        ],
-        "action": "evaluate",
-        "server": "google",
-        "client_subnet": "223.5.5.0/24",
-        "timeout": "2s"
-      },
-      {
-        "match_response": true,
-        "rule_set": "geoip-cn",
-        "server": "ali"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fake-ip-dns-server",
-        "rewrite_ttl": 1
-      }
+      {"query_type":["HTTPS","SVCB"],"action":"reject"},
+      {"clash_mode":"Direct","server":"ali"},
+      {"clash_mode":"Global","server":"fake-ip-dns-server"},
+      {"rule_set":["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","geosite-apple@cn","geosite-private"],"server":"ali"},
+      {"rule_set":"fakeipfilter-!cn","server":"google"},
+      {"type":"logical","mode":"and","rules":[{"query_type":["A","AAAA"]},{"rule_set":"geosite-geolocation-!cn","invert":true}],"action":"evaluate","server":"google","client_subnet":"223.5.5.0/24","timeout":"2s"},
+      {"match_response":true,"rule_set":"geoip-cn","server":"ali"},
+      {"query_type":["A","AAAA"],"server":"fake-ip-dns-server","rewrite_ttl":1}
     ],
     "final": "google",
     "strategy": "ipv4_only",
     "cache_capacity": 8192,
-    "optimistic": {
-      "enabled": true
-    },
+    "optimistic":{"enabled":true},
     "reverse_mapping": true
-  },
+     },
+
+
   "outbounds": [
-    {
-      "tag": "🚀 默认代理",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 长风分享节点",
-        "♻️ 工具大师节点",
-        "🚤 Rn自建节点",
-        "🚢 IDX自建节点",
-        "1️⃣ CFW节点",
-        "2️⃣ CFW节点",
-        "3️⃣ CFP节点",
-        "4️⃣ CFP节点",
-        "5️⃣ CFP节点",
-        "6️⃣ CFW节点",
-        "🐸 手动选择",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🤖 AI",
-      "type": "selector",
-      "outbounds": [
-        "🚀 默认代理",
-        "♻️ 长风分享节点",
-        "♻️ 工具大师节点",
-        "🚤 Rn自建节点",
-        "🚢 IDX自建节点",
-        "1️⃣ CFW节点",
-        "2️⃣ CFW节点",
-        "3️⃣ CFP节点",
-        "4️⃣ CFP节点",
-        "5️⃣ CFP节点",
-        "6️⃣ CFW节点",
-        "🐸 手动选择",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "📹 YouTube",
-      "type": "selector",
-      "outbounds": [
-        "🚀 默认代理",
-        "♻️ 长风分享节点",
-        "♻️ 工具大师节点",
-        "🚤 Rn自建节点",
-        "🚢 IDX自建节点",
-        "1️⃣ CFW节点",
-        "2️⃣ CFW节点",
-        "3️⃣ CFP节点",
-        "4️⃣ CFP节点",
-        "5️⃣ CFP节点",
-        "6️⃣ CFW节点",
-        "🐸 手动选择",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🍀 Google",
-      "type": "selector",
-      "outbounds": [
-        "🚀 默认代理",
-        "♻️ 长风分享节点",
-        "♻️ 工具大师节点",
-        "🚤 Rn自建节点",
-        "🚢 IDX自建节点",
-        "1️⃣ CFW节点",
-        "2️⃣ CFW节点",
-        "3️⃣ CFP节点",
-        "4️⃣ CFP节点",
-        "5️⃣ CFP节点",
-        "6️⃣ CFW节点",
-        "🐸 手动选择",
-        "♻️ 自动选择"
-      ]
-    },
+    {"tag":"🚀 默认代理","type":"selector","outbounds":["♻️ 长风分享节点","♻️ 工具大师节点","🚤 Rn自建节点","🚢 IDX自建节点","1️⃣ CFW节点","2️⃣ CFW节点","3️⃣ CFP节点","4️⃣ CFP节点","5️⃣ CFP节点","6️⃣ CFW节点","🐸 手动选择","♻️ 自动选择"]},
+    {"tag":"🤖 AI","type":"selector","outbounds":["🚀 默认代理","♻️ 长风分享节点","♻️ 工具大师节点","🚤 Rn自建节点","🚢 IDX自建节点","1️⃣ CFW节点","2️⃣ CFW节点","3️⃣ CFP节点","4️⃣ CFP节点","5️⃣ CFP节点","6️⃣ CFW节点","🐸 手动选择","♻️ 自动选择"]},
+    {"tag":"📹 YouTube","type":"selector","outbounds":["🚀 默认代理","♻️ 长风分享节点","♻️ 工具大师节点","🚤 Rn自建节点","🚢 IDX自建节点","1️⃣ CFW节点","2️⃣ CFW节点","3️⃣ CFP节点","4️⃣ CFP节点","5️⃣ CFP节点","6️⃣ CFW节点","🐸 手动选择","♻️ 自动选择"]},
+    {"tag":"🍀 Google","type":"selector","outbounds":["🚀 默认代理","♻️ 长风分享节点","♻️ 工具大师节点","🚤 Rn自建节点","🚢 IDX自建节点","1️⃣ CFW节点","2️⃣ CFW节点","3️⃣ CFP节点","4️⃣ CFP节点","5️⃣ CFP节点","6️⃣ CFW节点","🐸 手动选择","♻️ 自动选择"]},
     {
       "tag": "👨🏿‍💻 Github",
       "type": "selector",
