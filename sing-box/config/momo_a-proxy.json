@@ -88,7 +88,7 @@
       {"rule_set": "geosite-tiktok","outbound": "🎵 TikTok"},
       {"rule_set": "geosite-netflix","outbound": "🎥 Netflix"},
       {"rule_set": "Cloudflare","outbound": "🌤️ Cloudflare"},
-      {"rule_set": "my-proxy-inline","outbound": "🚥 小众选择"},
+      {"rule_set": "myproxy-mini","outbound": "🚥 小众选择"},
       {"rule_set": "geosite-paypal","outbound": "💰️ Wallet"},
       {"rule_set": "geosite-binance","outbound": "💰️ Wallet"},
       {"rule_set": "geosite-okx","outbound": "💰️ Wallet"},
