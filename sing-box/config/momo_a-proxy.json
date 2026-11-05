@@ -112,7 +112,7 @@
       {"tag":"geoip-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
   
       {"tag": "Cloudflare","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/Cloudflare.json"},
-      {"tag": "myproxy-mini","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.json"}
+      {"tag": "myproxy-mini","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.json"},
       {"tag": "myproxy-guowai-vd","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/proxy-guowai-vd.json"}
     ],
     "final": "🐟 漏网之鱼",
