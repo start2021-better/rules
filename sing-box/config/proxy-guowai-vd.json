@@ -1,1 +1,21 @@
-{"version":3,"rules":[{"domain_suffix":["huangsecangku.net","7000.me","sehuatang.org","xchina.co","xchina.download","xchina.io","xchina.click"]},{"domain_keyword":["hsck"]}]}
+{
+   "version": 3,
+   "rules": [
+      {
+         "domain_suffix": [
+            "huangsecangku.net",
+            "7000.me",
+            "sehuatang.org",
+            "xchina.co",
+            "xchina.download",
+            "xchina.io",
+            "xchina.click"
+         ]
+      },
+      {
+         "domain_keyword": [
+            "hsck"
+         ]
+      }
+   ]
+}
