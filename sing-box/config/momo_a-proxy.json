@@ -77,6 +77,10 @@
       {"clash_mode":"Global","outbound":"GLOBAL"},
       {"rule_set":"geosite-private","outbound":"直连"},
       {"rule_set": "geosite-category-ai-!cn", "outbound": "🤖 AI"},
+      {"rule_set": "Cloudflare","outbound": "🌤️ Cloudflare"},
+      {"rule_set": "myproxy-mini","outbound": "🚥 小众选择"},
+      {"rule_set": "myproxy-guowai-vd","outbound": "🎥 Netflix"},
+    
       {"rule_set": "geosite-youtube","outbound": "📹 YouTube"},
       {"rule_set": "geosite-google","outbound": "🍀 Google"},
       {"rule_set": "geosite-github","outbound": "👨🏿‍💻 Github"},
@@ -88,11 +92,6 @@
       {"rule_set": "geosite-telegram","outbound": "📲 Telegram"},
       {"rule_set": "geosite-tiktok","outbound": "🎵 TikTok"},
       {"rule_set": "geosite-netflix","outbound": "🎥 Netflix"},
-      
-      {"rule_set": "Cloudflare","outbound": "🌤️ Cloudflare"},
-      {"rule_set": "myproxy-mini","outbound": "🚥 小众选择"},
-      {"rule_set": "myproxy-guowai-vd","outbound": "🎥 Netflix"},
-    
       {"rule_set": "geosite-paypal","outbound": "💰️ Wallet"},
       {"rule_set": "geosite-binance","outbound": "💰️ Wallet"},
       {"rule_set": "geosite-okx","outbound": "💰️ Wallet"},
