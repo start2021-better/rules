@@ -107,7 +107,7 @@
       {"tag":["geosite-category-ai-!cn","geosite-youtube","geosite-google","geosite-github","geosite-onedrive","geosite-microsoft","geosite-microsoft@cn","geosite-apple","geosite-apple@cn","geosite-telegram","geosite-tiktok","geosite-netflix","geosite-paypal","geosite-binance","geosite-okx","geosite-category-cryptocurrency","geosite-steam@cn","geosite-steam","geosite-geolocation-!cn","geosite-cn","geosite-private"],"type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
       {"tag":"geoip-telegram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
       {"tag":"geoip-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
-      {"tag":"my-proxy-inline","type":"inline","rules":[{"domain_suffix":["translate.brave.com","firebase.studio"]},{"domain_keyword":["1e100"]}]}
+      {"tag":"my-proxy-inline","type":"inline","rules":[{"domain_suffix":["translate.brave.com","firebase.studio","qichiyu.com"]},{"domain_keyword":["1e100"]}]}
     ],
 
     "final": "🐟 漏网之鱼",
