@@ -48,7 +48,7 @@
     {"tag":"♻️ 工具大师节点","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["gjds-"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}],"url":"https://clients1.google.com/generate_204","interval":"10m","tolerance":100},
     {"tag":"🚤 Rn自建节点","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["Rn-US"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8"]}],"url":"https://clients1.google.com/generate_204","interval":"10m","tolerance":100},
     {"tag":"🚢 IDX自建节点","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["a1|a2|a3|a4"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}],"url":"https://clients1.google.com/generate_204","interval":"10m","tolerance":100},
-    {"tag":"🦞 EC2自建节点","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["EC2-TW"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}],
+    {"tag":"🦞 EC2自建节点","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["EC2-TW"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}]},
     {"tag":"⛅️ GCD自建节点","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["Gcloud-HK-"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}]},
     {"tag":"1️⃣ CFW节点","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["w1-|w2-"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}]},
     {"tag":"2️⃣ CFW节点","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["w1-|w2-"]},{"action":"exclude","keywords":["c1|c2|c3|c4|c5|c6|c7|c8|Rn-"]}]},
