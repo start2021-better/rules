@@ -119,6 +119,7 @@
       {"tag":"geosite-facebook","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs"},
       {"tag":"geosite-x","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/x.srs"},
       {"tag":"geosite-instagram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs"},
+      
       {"tag": "Cloudflare","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/Cloudflare.json"},
       {"tag": "myproxy-mini","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.json"},
       {"tag": "myproxy-guowai-vd","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/proxy-guowai-vd.json"}
