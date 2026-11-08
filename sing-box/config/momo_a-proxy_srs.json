@@ -86,6 +86,10 @@
       {"rule_set": "geosite-apple@cn","outbound": "直连" },
       {"rule_set": "geosite-apple","outbound": "🍎 Apple"},
       {"rule_set": "geosite-telegram","outbound": "📲 Telegram"},
+      {"rule_set": "geosite-facebook","outbound": "📲 Telegram"},
+      {"rule_set": "geosite-x","outbound": "📲 Telegram"},
+      {"rule_set": "geosite-instagram","outbound": "📲 Telegram"},
+      
       {"rule_set": "geosite-tiktok","outbound": "🎵 TikTok"},
       {"rule_set": "geosite-netflix","outbound": "🎥 Netflix"},
       {"rule_set": "Cloudflare","outbound": "🌤️ Cloudflare"},
@@ -101,6 +105,7 @@
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 默认代理"},
       {"action": "resolve"},
       {"rule_set": "geoip-telegram","outbound": "📲 Telegram"},
+      {"rule_set": "geoip-facebook","outbound": "📲 Telegram"},
       {"rule_set": "geoip-cn","outbound": "直连"}
     ],
     
@@ -109,6 +114,11 @@
       {"tag":["geosite-category-ai-!cn","geosite-youtube","geosite-google","geosite-github","geosite-onedrive","geosite-microsoft","geosite-microsoft@cn","geosite-apple","geosite-apple@cn","geosite-telegram","geosite-tiktok","geosite-netflix","geosite-paypal","geosite-binance","geosite-okx","geosite-category-cryptocurrency","geosite-steam@cn","geosite-steam","geosite-geolocation-!cn","geosite-cn","geosite-private"],"type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
       {"tag":"geoip-telegram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
       {"tag":"geoip-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
+
+      {"tag":"geoip-facebook","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs"},
+      {"tag":"geosite-facebook","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs"},
+      {"tag":"geosite-x","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/x.srs"},
+      {"tag":"geosite-instagram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs"},
   
       {"tag": "Cloudflare","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/Cloudflare.json"},
       {"tag": "myproxy-mini","type": "remote","format": "binary","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.srs"},
