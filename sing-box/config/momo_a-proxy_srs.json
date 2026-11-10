@@ -81,6 +81,8 @@
       {"rule_set": "geosite-youtube","outbound": "📹 YouTube"},
       {"rule_set": "geosite-google","outbound": "🍀 Google"},
       {"rule_set": "geosite-github","outbound": "👨🏿‍💻 Github"},
+      {"rule_set": "geosite-docker","outbound": "👨🏿‍💻 Github"},
+      
       {"rule_set": "geosite-onedrive","outbound": "🐬 OneDrive"},
       {"rule_set": "geosite-microsoft@cn","outbound": "直连"},
       {"rule_set": "geosite-microsoft","outbound": "🪟 Microsoft"},
@@ -120,6 +122,7 @@
       {"tag":"geosite-facebook","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs"},
       {"tag":"geosite-x","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/x.srs"},
       {"tag":"geosite-instagram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs"},
+      {"tag":"geosite-docker","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/docker.srs"},
   
       {"tag": "Cloudflare","type": "remote","format": "source","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/Cloudflare.json"},
       {"tag": "myproxy-mini","type": "remote","format": "binary","url": "https://gh-proxy.com/https://raw.githubusercontent.com/start2021-better/rules/main/sing-box/config/myproxy-mini.srs"},
