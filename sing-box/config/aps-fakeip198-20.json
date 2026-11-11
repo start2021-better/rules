@@ -6,7 +6,7 @@
       {"tag":"ali","type":"https","server":"223.5.5.5"},
       {"tag":"tx","type":"https","server":"doh.pub","domain_resolver":"hosts"},
       {"tag":"google","type":"https","server":"8.8.8.8","detour":"🚀 默认代理"},
-      {"tag":"fake-ip-dns-server","type":"fakeip","inet4_range":"198.19.0.0/16"},
+      {"tag":"fake-ip-dns-server","type":"fakeip","inet4_range":"198.20.0.0/16"},
       {"type":"hosts","tag":"hosts","predefined":{"doh.pub":["1.12.12.21","120.53.53.53"]}}
     ],
     "rules": [
