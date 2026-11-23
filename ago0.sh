@@ -44,7 +44,7 @@ echo "甬哥Github项目  ：github.com/yonggekkk"
 echo "甬哥Blogger博客 ：ygkkk.blogspot.com"
 echo "甬哥YouTube频道 ：www.youtube.com/@ygkkk"
 echo "ArgoSB一键无交互脚本"
-echo "当前版本：25.6.5 (已修复变量引号与进程检测)"
+echo "当前版本：25.6.5 (完整修复版)"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 hostname=$(uname -a | awk '{print $2}')
@@ -64,12 +64,55 @@ warpcheck() {
   wgcfv4=$(curl -s4m5 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
 }
 
+download_singbox() {
+  local target="$HOME/agsb/sing-box"
+  local tmp_file="$HOME/agsb/sing-box.tmp"
+  rm -f "$tmp_file" "$target"
+
+  local arch_tag api_url dl_url ver
+  [ "$cpu" = "amd64" ] && arch_tag="linux-amd64" || arch_tag="linux-arm64"
+  api_url="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
+  dl_url=$(curl -fsSL --max-time 15 "$api_url" 2>/dev/null | grep -Eo "https://github.com/SagerNet/sing-box/releases/download/[^\"]+${arch_tag}\.tar\.gz" | head -n 1)
+
+  if [ -n "$dl_url" ]; then
+    ver=$(echo "$dl_url" | sed -E 's#.*/v([^/]+)/.*#\1#')
+    echo "正在从官方仓库下载 sing-box v${ver} (${arch_tag})..."
+    if curl -fL --retry 2 --max-time 60 "$dl_url" -o "$HOME/agsb/sb.tar.gz" 2>/dev/null; then
+      tar -zxf "$HOME/agsb/sb.tar.gz" -C "$HOME/agsb" 2>/dev/null
+      local bin_path
+      bin_path=$(find "$HOME/agsb" -type f -name "sing-box" | head -n 1)
+      if [ -n "$bin_path" ]; then
+        mv "$bin_path" "$target"
+      fi
+      rm -rf "$HOME/agsb/sb.tar.gz" "$HOME/agsb"/sing-box-*
+    fi
+  fi
+
+  if [ ! -s "$target" ]; then
+    echo "尝试备用地址下载 sing-box..."
+    curl -fL --retry 2 --max-time 60 "https://github.com/yonggekkk/ArgoSB/releases/download/singbox/sing-box-$cpu" -o "$tmp_file" 2>/dev/null && mv "$tmp_file" "$target"
+    rm -f "$tmp_file"
+  fi
+
+  if [ ! -s "$target" ]; then
+    echo "下载 sing-box 失败，请检查当前环境网络或手动放置 sing-box 二进制到 $target"
+    exit 1
+  fi
+
+  chmod +x "$target"
+  if ! "$target" version >/dev/null 2>&1; then
+    echo "下载的文件不是有效的 sing-box 可执行文件，前几行内容如下："
+    head -n 5 "$target"
+    rm -f "$target"
+    exit 1
+  fi
+}
+
 ins() {
   if [ ! -e "$HOME/agsb/sing-box" ]; then
-    curl -Lo "$HOME/agsb/sing-box" -# --retry 2 "https://github.com/yonggekkk/ArgoSB/releases/download/singbox/sing-box-$cpu"
-    chmod +x "$HOME/agsb/sing-box"
+    download_singbox
     sbcore=$("$HOME/agsb/sing-box" version 2>/dev/null | awk '/version/{print $NF}')
-    echo "已安装Sing-box正式版内核：$sbcore"
+    echo "已安装Sing-box内核：$sbcore"
   fi
 
   cat > "$HOME/agsb/sb.json" <<EOF
@@ -91,8 +134,8 @@ EOF
   command -v openssl >/dev/null 2>&1 && openssl ecparam -genkey -name prime256v1 -out "$HOME/agsb/private.key" >/dev/null 2>&1
   command -v openssl >/dev/null 2>&1 && openssl req -new -x509 -days 36500 -key "$HOME/agsb/private.key" -out "$HOME/agsb/cert.pem" -subj "/CN=www.bing.com" >/dev/null 2>&1
   if [ ! -f "$HOME/agsb/private.key" ]; then
-    curl -Lso "$HOME/agsb/private.key" https://github.com/yonggekkk/ArgoSB/releases/download/singbox/private.key
-    curl -Lso "$HOME/agsb/cert.pem" https://github.com/yonggekkk/ArgoSB/releases/download/singbox/cert.pem
+    curl -fLso "$HOME/agsb/private.key" https://github.com/yonggekkk/ArgoSB/releases/download/singbox/private.key 2>/dev/null || true
+    curl -fLso "$HOME/agsb/cert.pem" https://github.com/yonggekkk/ArgoSB/releases/download/singbox/cert.pem 2>/dev/null || true
   fi
 
   if [ -n "$vlp" ]; then
@@ -295,9 +338,9 @@ EOF
 
   if [[ -n "$argo" ]]; then
     if [ ! -e "$HOME/agsb/cloudflared" ]; then
-      argocore=$(curl -Ls https://data.jsdelivr.net/v1/package/gh/cloudflare/cloudflared | grep -Eo '"[0-9.]+",' | sed -n 1p | tr -d '",')
+      argocore=$(curl -fsSL https://data.jsdelivr.com/v1/package/gh/cloudflare/cloudflared 2>/dev/null | grep -Eo '"[0-9.]+",' | sed -n 1p | tr -d '",')
       echo "下载cloudflared-argo最新正式版内核：$argocore"
-      curl -Lo "$HOME/agsb/cloudflared" -# --retry 2 "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$cpu"
+      curl -fLo "$HOME/agsb/cloudflared" -# --retry 2 "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$cpu"
       chmod +x "$HOME/agsb/cloudflared"
     fi
     if [[ -n "${ARGO_DOMAIN}" && -n "${ARGO_AUTH}" ]]; then
@@ -330,8 +373,8 @@ EOF
     COMMAND="agsb"
     SCRIPT_PATH="$HOME/bin/$COMMAND"
     mkdir -p "$HOME/bin"
-    curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh > "$SCRIPT_PATH"
-    chmod +x "$SCRIPT_PATH"
+    curl -fLs https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh > "$SCRIPT_PATH" 2>/dev/null || true
+    chmod +x "$SCRIPT_PATH" 2>/dev/null || true
     sed -i '/export PATH="\$HOME\/bin:\$PATH"/d' ~/.bashrc
     echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.bashrc"
     grep -qxF 'source ~/.bashrc' ~/.bash_profile 2>/dev/null || echo 'source ~/.bashrc' >> ~/.bash_profile
