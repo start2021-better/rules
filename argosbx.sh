@@ -11,28 +11,28 @@ main="bash <(curl -Ls $url)"
 cmd+="$main${*:+$*}"
 [ "$cmd" != "$main" ] && echo "$cmd" > "$HOME/agsbx/sh.txt"
 ;; esac
-[ -z "${vlpt+x}" ] || vlp=yes
-[ -z "${vmpt+x}" ] || { vmp=yes; vmag=yes; }
-[ -z "${vwpt+x}" ] || { vwp=yes; vmag=yes; }
-[ -z "${hypt+x}" ] || hyp=yes
-[ -z "${tupt+x}" ] || tup=yes
-[ -z "${xhpt+x}" ] || xhp=yes
-[ -z "${vxpt+x}" ] || { vxp=yes; vmag=yes; }
-[ -z "${anpt+x}" ] || anp=yes
-[ -z "${sspt+x}" ] || ssp=yes
-[ -z "${arpt+x}" ] || arp=yes
-[ -z "${sopt+x}" ] || sop=yes
-[ -z "${warp+x}" ] || wap=yes
-[ -z "${nvpt+x}" ] || nvp=yes
-[ -z "${xupt+x}" ] || xup=yes
-[ -z "${xcpt+x}" ] || xcp=yes
-[ -z "${snpt+x}" ] || snp=yes
+[[ -n "${vlpt+x}" && -n "$vlpt" ]] && vlp=yes
+[[ -n "${vmpt+x}" && -n "$vmpt" ]] && { vmp=yes; vmag=yes; }
+[[ -n "${vwpt+x}" && -n "$vwpt" ]] && { vwp=yes; vmag=yes; }
+[[ -n "${hypt+x}" && -n "$hypt" ]] && hyp=yes
+[[ -n "${tupt+x}" && -n "$tupt" ]] && tup=yes
+[[ -n "${xhpt+x}" && -n "$xhpt" ]] && xhp=yes
+[[ -n "${vxpt+x}" && -n "$vxpt" ]] && { vxp=yes; vmag=yes; }
+[[ -n "${anpt+x}" && -n "$anpt" ]] && anp=yes
+[[ -n "${sspt+x}" && -n "$sspt" ]] && ssp=yes
+[[ -n "${arpt+x}" && -n "$arpt" ]] && arp=yes
+[[ -n "${sopt+x}" && -n "$sopt" ]] && sop=yes
+[[ -n "${warp+x}" && -n "$warp" ]] && wap=yes
+[[ -n "${nvpt+x}" && -n "$nvpt" ]] && nvp=yes
+[[ -n "${xupt+x}" && -n "$xupt" ]] && xup=yes
+[[ -n "${xcpt+x}" && -n "$xcpt" ]] && xcp=yes
+[[ -n "${snpt+x}" && -n "$snpt" ]] && snp=yes
 if find /proc/*/exe -type l 2>/dev/null | grep -E '/proc/[0-9]+/exe' | xargs -r readlink 2>/dev/null | grep -Eq 'agsbx/(s|x)' || pgrep -f 'agsbx/(s|x)' >/dev/null 2>&1; then
 if [ "$1" = "rep" ]; then
-[ "$snp" = yes ] || [ "$xcp" = yes ] \vert{}\vert{} [ "$xup" = yes ] || [ "$nvp" = yes ] \vert{}\vert{} [ "$vwp" = yes ] || [ "$sop" = yes ] \vert{}\vert{} [ "$vxp" = yes ] || [ "$ssp" = yes ] \vert{}\vert{} [ "$vlp" = yes ] || [ "$vmp" = yes ] \vert{}\vert{} [ "$hyp" = yes ] || [ "$tup" = yes ] \vert{}\vert{} [ "$xhp" = yes ] || [ "$anp" = yes ] \vert{}\vert{} [ "$arp" = yes ] || { echo "提示：rep重置协议时，请在脚本前至少设置一个协议变量哦，再见！💣"; exit; }
+[ "$snp" = yes ] || [ "$xcp" = yes ] || [ "$xup" = yes ] || [ "$nvp" = yes ] || [ "$vwp" = yes ] || [ "$sop" = yes ] || [ "$vxp" = yes ] || [ "$ssp" = yes ] || [ "$vlp" = yes ] || [ "$vmp" = yes ] || [ "$hyp" = yes ] || [ "$tup" = yes ] || [ "$xhp" = yes ] || [ "$anp" = yes ] || [ "$arp" = yes ] || { echo "提示：rep重置协议时，请在脚本前至少设置一个协议变量哦，再见！💣"; exit; }
 fi
 else
-[ "$1" = "del" ] \vert{}\vert{} [ "$snp" = yes ] || [ "$xcp" = yes ] \vert{}\vert{} [ "$xup" = yes ] || [ "$nvp" = yes ] \vert{}\vert{} [ "$vwp" = yes ] || [ "$sop" = yes ] \vert{}\vert{} [ "$vxp" = yes ] || [ "$ssp" = yes ] \vert{}\vert{} [ "$vlp" = yes ] || [ "$vmp" = yes ] \vert{}\vert{} [ "$hyp" = yes ] || [ "$tup" = yes ] \vert{}\vert{} [ "$xhp" = yes ] || [ "$anp" = yes ] \vert{}\vert{} [ "$arp" = yes ] || { echo "提示：未安装argosbx脚本，请在脚本前至少设置一个协议变量哦，再见！💣"; exit; }
+[ "$1" = "del" ] || [ "$snp" = yes ] || [ "$xcp" = yes ] || [ "$xup" = yes ] || [ "$nvp" = yes ] || [ "$vwp" = yes ] || [ "$sop" = yes ] || [ "$vxp" = yes ] || [ "$ssp" = yes ] \vert{}\vert{} [ "$vlp" = yes ] || [ "$vmp" = yes ] \vert{}\vert{} [ "$hyp" = yes ] || [ "$tup" = yes ] \vert{}\vert{} [ "$xhp" = yes ] || [ "$anp" = yes ] \vert{}\vert{} [ "$arp" = yes ] || { echo "提示：未安装argosbx脚本，请在脚本前至少设置一个协议变量哦，再见！💣"; exit; }
 fi
 export uuid=${uuid:-''}
 export port_vl_re=${vlpt:-''}
