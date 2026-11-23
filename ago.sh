@@ -9,28 +9,28 @@ is_sb_running() {
 }
 
 if ! is_sb_running; then
-  [ -z "${vlpt+x}" ] || vlp=yes
-  [ -z "${vmpt+x}" ] || vmp=yes
-  [ -z "${hypt+x}" ] || hyp=yes
-  [ -z "${tupt+x}" ] || tup=yes
-  [ -z "${anpt+x}" ] || anp=yes
-  [ "$vlp" = yes ] || [ "$vmp" = yes ] \vert{}\vert{} [ "$hyp" = yes ] || [ "$tup" = yes ] \vert{}\vert{} [ "$anp" = yes ] || {
+  [ -n "${vlpt+x}" ] && vlp=yes
+  [ -n "${vmpt+x}" ] && vmp=yes
+  [ -n "${hypt+x}" ] && hyp=yes
+  [ -n "${tupt+x}" ] && tup=yes
+  [ -n "${anpt+x}" ] && anp=yes
+  if [ "$vlp" != "yes" ] && [ "$vmp" != "yes" ] && [ "$hyp" != "yes" ] && [ "$tup" != "yes" ] && [ "$anp" != "yes" ]; then
     echo "注意，请在脚本前至少设置一个协议变量"
     exit 1
-  }
+  fi
 fi
 
-export uuid=${uuid:-''}
-export port_vl_re=${vlpt:-''}
-export port_vm_ws=${vmpt:-''}
-export port_hy2=${hypt:-''}
-export port_tu=${tupt:-''}
-export port_an=${anpt:-''}
-export ym_vl_re=${reym:-''}
-export argo=${argo:-''}
-export ARGO_DOMAIN=${agn:-''}
-export ARGO_AUTH=${agk:-''}
-export ipsw=${ip:-''}
+export uuid="${uuid:-}"
+export port_vl_re="${vlpt:-}"
+export port_vm_ws="${vmpt:-}"
+export port_hy2="${hypt:-}"
+export port_tu="${tupt:-}"
+export port_an="${anpt:-}"
+export ym_vl_re="${reym:-}"
+export argo="${argo:-}"
+export ARGO_DOMAIN="${agn:-}"
+export ARGO_AUTH="${agk:-}"
+export ipsw="${ip:-}"
 
 showmode() {
   echo "显示节点信息：agsb或者脚本 list"
@@ -44,7 +44,7 @@ echo "甬哥Github项目  ：github.com/yonggekkk"
 echo "甬哥Blogger博客 ：ygkkk.blogspot.com"
 echo "甬哥YouTube频道 ：www.youtube.com/@ygkkk"
 echo "ArgoSB一键无交互脚本"
-echo "当前版本：25.6.5 (已修复进程检测)"
+echo "当前版本：25.6.5 (已修复变量引号与进程检测)"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 hostname=$(uname -a | awk '{print $2}')
@@ -293,9 +293,9 @@ EOF
   nohup "$HOME/agsb/sing-box" run -c "$HOME/agsb/sb.json" >"$HOME/agsb/sb.log" 2>&1 &
   sleep 2
 
-  if [[ -n $argo ]]; then
+  if [[ -n "$argo" ]]; then
     if [ ! -e "$HOME/agsb/cloudflared" ]; then
-      argocore=$(curl -Ls https://data.jsdelivr.com/v1/package/gh/cloudflare/cloudflared | grep -Eo '"[0-9.]+",' | sed -n 1p | tr -d '",')
+      argocore=$(curl -Ls https://data.jsdelivr.net/v1/package/gh/cloudflare/cloudflared | grep -Eo '"[0-9.]+",' | sed -n 1p | tr -d '",')
       echo "下载cloudflared-argo最新正式版内核：$argocore"
       curl -Lo "$HOME/agsb/cloudflared" -# --retry 2 "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$cpu"
       chmod +x "$HOME/agsb/cloudflared"
@@ -341,7 +341,7 @@ EOF
     sed -i '/agsb\/sing-box/d' /tmp/crontab.tmp
     echo '@reboot /bin/bash -c "nohup $HOME/agsb/sing-box run -c $HOME/agsb/sb.json >/dev/null 2>&1 &"' >> /tmp/crontab.tmp
     sed -i '/agsb\/cloudflared/d' /tmp/crontab.tmp
-    if [[ -n $argo ]]; then
+    if [[ -n "$argo" ]]; then
       if [[ -n "${ARGO_DOMAIN}" && -n "${ARGO_AUTH}" ]]; then
         echo '@reboot /bin/bash -c "nohup $HOME/agsb/cloudflared tunnel --no-autoupdate --edge-ip-version auto --protocol http2 run --token $(cat $HOME/agsb/sbargotoken.log 2>/dev/null) >/dev/null 2>&1 &"' >> /tmp/crontab.tmp
       else
